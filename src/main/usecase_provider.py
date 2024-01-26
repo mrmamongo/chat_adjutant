@@ -15,7 +15,7 @@ from src.domain.services.thread import ThreadService
 from src.domain.services.user import UserService
 
 
-class InteractorProvider(Provider):
+class UsecaseProvider(Provider):
     # @provide(scope=Scope.REQUEST)
     # async def get_get_all_threads(
     #     self, thread_gateway: ThreadGateway
