@@ -10,7 +10,7 @@ from src.application.common.exceptions import ApplicationException
 from src.config import Config, get_config
 from src.infra.log.setup import setup_logging
 from src.main.di import DIProvider
-from src.main.interactor_provider import InteractorProvider
+from src.main.usecase_provider import UsecaseProvider
 from src.main.web import setup_fastapi
 from src.presentation.telegram.middlewares import ContainerMiddleware
 from src.presentation.telegram.setup import setup_dispatcher
@@ -29,7 +29,7 @@ async def run() -> None:
     bot, dispatcher = await setup_dispatcher(config.telegram)
     async with make_async_container(
         DIProvider(config, dispatcher, bot),
-        InteractorProvider(),
+        UsecaseProvider(),
         with_lock=True,
     ) as container:
         dispatcher.update.middleware(ContainerMiddleware(container))
