@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "bot-prototype-concrete"
+version = "0.1.0"
+description = ""
+authors = ["mrmamongo <mrmamongo@gmail.com>"]
+readme = "README.md"
+packages = [{include = "bot_prototype_concrete"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dishka = {git = "https://github.com/reagento/dishka.git"}
+fastapi = "^0.109.0"
+adaptix = "^3.0.0b1"
+sqlalchemy = "^2.0.25"
+aiogram = "^3.3.0"
+structlog = "^24.1.0"
+httpx = "^0.26.0"
+uvicorn = "^0.27.0"
+pyyaml = "^6.0.1"
+jinja2 = "^3.1.3"
+sqladmin = "^0.16.0"
+redis = "^5.0.1"
+orjson = "^3.9.12"
+asyncpg = "^0.29.0"
+alembic = "^1.13.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
