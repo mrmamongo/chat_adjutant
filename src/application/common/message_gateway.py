@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Sequence
 from uuid import UUID
 
-from src.domain.models.thread import RequestMessage, ResponseMessage
+from src.domain.models.thread import Message, RequestMessage, ResponseMessage
 
 
 class MessageGateway(ABC):
@@ -15,5 +15,5 @@ class MessageGateway(ABC):
         pass
 
     @abstractmethod
-    async def get_messages(self, thread_id: UUID) -> Sequence[RequestMessage | ResponseMessage]:
+    async def get_messages(self, thread_id: UUID) -> Sequence[Message]:
         pass
